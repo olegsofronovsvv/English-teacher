@@ -1,0 +1,241 @@
+-- Expand every CEFR level to a complete ten-lesson course.
+-- Every lesson receives five exercises and every level at least 28 vocabulary items.
+
+insert into public.lessons
+  (level_code, order_index, title, subtitle, theory, rule_text, examples, xp, estimated_minutes, source_url)
+values
+  ('A0',5,'Цвета и формы','Опишите простой предмет','Цвет обычно ставится перед существительным. Для формы используйте слова round, square и long.','This is a/an + цвет + предмет.','["This is a red apple.","It is a blue square."]',45,7,'https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary'),
+  ('A0',6,'Моя семья','Назовите членов семьи','Для знакомства с семьёй используйте This is и притяжательное my.','This is my + член семьи.','["This is my mother.","This is my brother."]',45,7,'https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary'),
+  ('A0',7,'Еда и напитки','Скажите, что вам нравится','После I like используйте название продукта. Для просьбы подойдёт I would like.','I like + noun; I would like + noun.','["I like apples.","I would like some water."]',50,8,'https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary'),
+  ('A0',8,'Дом и комната','Предметы вокруг вас','This is указывает на один предмет рядом, these are — на несколько предметов.','This is + singular; These are + plural.','["This is a table.","These are two chairs."]',50,8,'https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary'),
+  ('A0',9,'Дни и время','Назовите день и простой час','Для дней используйте on, а для точного времени — at.','on + day; at + time.','["English is on Monday.","The lesson is at five."]',50,8,'https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary'),
+  ('A0',10,'Простые вопросы','Спросите имя, место и предмет','Вопросительные слова what, where и who ставятся в начале вопроса.','Question word + is/are + subject?','["What is your name?","Where is my book?"]',55,9,'https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar'),
+
+  ('A1',5,'There is и there are','Опишите место','There is используется с одним предметом, there are — с несколькими.','There is + singular; There are + plural.','["There is a café near my house.","There are two parks here."]',70,9,'https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar'),
+  ('A1',6,'Can и cannot','Умения и разрешение','Can выражает умение или возможность. После can используется начальная форма глагола.','can/cannot + base verb.','["I can swim.","She cannot drive."]',70,9,'https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar'),
+  ('A1',7,'Present Continuous','Что происходит сейчас','Present Continuous описывает действие в момент речи.','am/is/are + verb-ing.','["I am reading now.","They are waiting outside."]',75,10,'https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar'),
+  ('A1',8,'Исчисляемые слова','some, any, much и many','Many употребляется с исчисляемыми существительными, much — с неисчисляемыми.','many + plural; much + uncountable noun.','["We have many books.","There is not much water."]',75,10,'https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar'),
+  ('A1',9,'Предлоги места','in, on, under и next to','Предлоги места показывают положение предмета относительно другого предмета.','noun + be + preposition + noun.','["The keys are on the table.","The bag is under the chair."]',70,9,'https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary'),
+  ('A1',10,'В магазине','Цена, размер и покупка','Вежливые вопросы How much и Can I help помогают общаться в магазине.','How much is/are ...? I would like ...','["How much is this shirt?","I would like a smaller size."]',80,11,'https://learnenglish.britishcouncil.org/skills/speaking/a1-speaking'),
+
+  ('A2',5,'Past Continuous','Действие в процессе в прошлом','Past Continuous показывает действие, которое происходило в определённый момент прошлого.','was/were + verb-ing.','["I was working at six.","They were walking home."]',85,11,'https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar'),
+  ('A2',6,'Present Perfect: начало','Опыт без точного времени','Present Perfect говорит об опыте, когда точное время не называется.','have/has + past participle.','["I have seen this film.","She has never flown."]',90,12,'https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar'),
+  ('A2',7,'Should и must','Совет и обязанность','Should даёт совет, must выражает сильную обязанность. После них используется начальная форма.','should/must + base verb.','["You should call a doctor.","Passengers must show a ticket."]',85,11,'https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/modal-verbs'),
+  ('A2',8,'First Conditional: начало','Возможный результат','Первый тип условных предложений связывает реальное условие с будущим результатом.','If + Present Simple, will + base verb.','["If it rains, we will stay inside.","I will call if I am late."]',90,12,'https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar/conditionals-zero-first-second'),
+  ('A2',9,'Who, which и that','Добавьте информацию о предмете','Относительное предложение уточняет человека или предмет без нового отдельного предложения.','who for people; which/that for things.','["The woman who works here is friendly.","This is the book that I bought."]',90,12,'https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar'),
+  ('A2',10,'Личное письмо','Напишите короткое сообщение','Личное письмо включает приветствие, основную мысль, детали и завершение.','greeting + message + closing.','["Hi Sam, thanks for your message.","See you soon, Anna."]',95,13,'https://learnenglish.britishcouncil.org/skills/writing/a2-writing'),
+
+  ('B1',5,'Времена в рассказе','Свяжите события прошлого','Past Simple двигает сюжет, Past Continuous задаёт фон, Past Perfect показывает более раннее действие.','background + main event + earlier event.','["I was walking when it started to rain.","She had left before I arrived."]',100,13,'https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar'),
+  ('B1',6,'Gerund и infinitive','Формы после глаголов','Некоторые глаголы требуют -ing, другие — инфинитив с to. Форму нужно запоминать вместе с глаголом.','enjoy + -ing; want + to-infinitive.','["I enjoy learning languages.","We decided to leave early."]',100,13,'https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar'),
+  ('B1',7,'Defining relative clauses','Уточняющая информация','Определительные придаточные уточняют, о каком человеке или предмете идёт речь.','noun + who/which/that + clause.','["The colleague who helped me is new.","The app that we use is free."]',100,13,'https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar'),
+  ('B1',8,'Фразовые глаголы','Глагол и частица','Значение фразового глагола часто нельзя вывести из отдельных слов, поэтому учите его как единое выражение.','verb + particle = new meaning.','["Please turn down the music.","We need to find out the reason."]',100,13,'https://learnenglish.britishcouncil.org/vocabulary/b1-b2-vocabulary'),
+  ('B1',9,'Обсуждение и мнение','Согласие и несогласие','В дискуссии сначала ясно обозначьте мнение, затем приведите причину и пример.','opinion + reason + example.','["In my opinion, the plan is practical.","I see your point, but I disagree."]',105,14,'https://learnenglish.britishcouncil.org/skills/speaking/b1-speaking'),
+  ('B1',10,'Формальное письмо','Запрос и ответ','Формальное письмо использует нейтральное обращение, ясную цель и вежливое завершение.','formal greeting + purpose + details + closing.','["I am writing to request information.","I look forward to your reply."]',110,15,'https://learnenglish.britishcouncil.org/skills/writing/b1-writing'),
+
+  ('B2',5,'Будущие формы','Планы, прогнозы и расписание','Выбор future form зависит от намерения, договорённости, расписания или спонтанного решения.','will, going to, Present Continuous or Present Simple by meaning.','["I am meeting the client tomorrow.","The train leaves at nine."]',110,14,'https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar'),
+  ('B2',6,'Mixed Conditionals','Связь прошлого и настоящего','Смешанные условные предложения показывают, как прошлое влияет на настоящее или наоборот.','If + Past Perfect, would + base verb.','["If I had studied medicine, I would be a doctor now.","If she were organised, she would not have missed it."]',115,15,'https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar'),
+  ('B2',7,'Wish и if only','Сожаление и желание','Wish с Past Simple выражает желание изменить настоящее, с Past Perfect — сожаление о прошлом.','wish + Past Simple/Past Perfect.','["I wish I knew the answer.","If only we had booked earlier."]',110,14,'https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar'),
+  ('B2',8,'Связующие слова','Логика сложного текста','Discourse markers показывают добавление, противопоставление, причину, следствие и вывод.','link ideas with moreover, however, therefore and in conclusion.','["The plan is costly; however, it is effective.","Demand increased; therefore, prices rose."]',115,15,'https://learnenglish.britishcouncil.org/skills/writing/b2-writing'),
+  ('B2',9,'Устойчивые сочетания','Естественная лексика','Collocations — слова, которые часто употребляются вместе. Их изучают целыми сочетаниями.','learn adjective+noun and verb+noun combinations.','["We reached an agreement.","The change had a significant impact."]',110,14,'https://learnenglish.britishcouncil.org/vocabulary/b1-b2-vocabulary'),
+  ('B2',10,'Эссе с аргументами','Структура развёрнутого ответа','Эссе содержит введение, тематические абзацы с доказательствами и итоговый вывод.','introduction + supported paragraphs + conclusion.','["One major advantage is greater flexibility.","In conclusion, the benefits outweigh the risks."]',120,16,'https://learnenglish.britishcouncil.org/skills/writing/b2-writing'),
+
+  ('C1',5,'Hedging','Осторожные формулировки','Hedging помогает избегать чрезмерной категоричности в академической и профессиональной речи.','use may, might, appears, tends to and arguably.','["The results may indicate a wider trend.","This approach appears to be effective."]',130,16,'https://learnenglish.britishcouncil.org/skills/writing/c1-writing'),
+  ('C1',6,'Продвинутый Passive','Безличные и сложные конструкции','Формальный стиль часто использует reporting passive, чтобы сосредоточиться на информации, а не источнике.','It is said that ...; subject + is believed to ...','["It is widely believed that demand will rise.","The policy is expected to change."]',130,16,'https://learnenglish.britishcouncil.org/grammar/c1-grammar'),
+  ('C1',7,'Nominalisation','Плотный академический стиль','Номинализация превращает действие или качество в существительное и делает текст более формальным.','verb/adjective → abstract noun.','["The committee analysed the data.","The analysis of the data revealed a pattern."]',135,17,'https://learnenglish.britishcouncil.org/skills/writing/c1-writing'),
+  ('C1',8,'Регистр и идиомы','Выберите подходящий стиль','Продвинутая речь требует различать нейтральный, разговорный и формальный регистр.','match vocabulary and idioms to audience and purpose.','["Could you clarify your position?","Let us get straight to the point."]',130,16,'https://learnenglish.britishcouncil.org/vocabulary/c1-vocabulary'),
+  ('C1',9,'Критическое чтение','Оцените аргумент и доказательства','Критическое чтение отделяет тезис, предположения, доказательства и ограничения автора.','identify claim + evidence + assumption + limitation.','["The claim relies on a limited sample.","The evidence supports correlation, not causation."]',140,18,'https://learnenglish.britishcouncil.org/skills/reading/c1-reading'),
+  ('C1',10,'Профессиональная презентация','Структура и убедительность','Сильная презентация обозначает цель, ведёт аудиторию по структуре и завершает ясным выводом.','opening + signposting + evidence + conclusion.','["Today I will outline three key findings.","To sum up, the proposed change is both feasible and necessary."]',145,18,'https://learnenglish.britishcouncil.org/skills/speaking/c1-speaking')
+on conflict (level_code, order_index) do update set
+  title = excluded.title,
+  subtitle = excluded.subtitle,
+  theory = excluded.theory,
+  rule_text = excluded.rule_text,
+  examples = excluded.examples,
+  xp = excluded.xp,
+  estimated_minutes = excluded.estimated_minutes,
+  source_url = excluded.source_url;
+
+-- Add a five-question practice set to every lesson. Existing authored first
+-- questions remain unchanged; missing questions are filled idempotently.
+insert into public.lesson_exercises
+  (lesson_id, order_index, exercise_type, prompt, question, options, correct_index, explanation)
+select
+  lesson.id,
+  exercise.order_index,
+  'multiple_choice',
+  exercise.prompt,
+  exercise.question,
+  exercise.options,
+  exercise.correct_index,
+  exercise.explanation
+from public.lessons as lesson
+cross join lateral (
+  values
+    (1, 'Выберите правильный пример',
+      'Какой вариант соответствует теме «' || lesson.title || '»?',
+      jsonb_build_array(lesson.examples ->> 0, 'I no understand this rule.', 'Yesterday I will went there.'),
+      0, lesson.rule_text),
+    (2, 'Найдите верное правило',
+      'Какое правило нужно применить в этом уроке?',
+      jsonb_build_array('К каждому глаголу всегда добавляется -ing.', lesson.rule_text, 'Порядок слов не имеет значения.'),
+      1, lesson.theory),
+    (3, 'Выберите естественную фразу',
+      'Какой английский пример построен правильно?',
+      jsonb_build_array(lesson.examples ->> 1, 'She do not is ready.', 'They was will arrive.'),
+      0, lesson.rule_text),
+    (4, 'Проверьте понимание темы',
+      'Что является основной темой этого урока?',
+      jsonb_build_array('Только написание английского алфавита', 'Только перевод отдельных чисел', lesson.title),
+      2, lesson.theory),
+    (5, 'Закрепите материал',
+      'Выберите конструкцию, которую стоит запомнить.',
+      jsonb_build_array(lesson.rule_text, 'Любое предложение строится без подлежащего.', 'Все английские глаголы имеют одну форму.'),
+      0, 'Повторите правило и примеры перед переходом к следующему уроку.')
+) as exercise(order_index, prompt, question, options, correct_index, explanation)
+on conflict (lesson_id, order_index) do nothing;
+
+insert into public.vocabulary
+  (level_code, word, transcription, translation, example, source_url)
+select
+  item.level_code,
+  item.word,
+  '',
+  item.translation,
+  item.example,
+  'https://dictionary.cambridge.org/dictionary/english/' || replace(item.word, ' ', '-')
+from (values
+  ('A0','family','семья','This is my family.'),
+  ('A0','mother','мама','My mother is kind.'),
+  ('A0','father','папа','My father is at home.'),
+  ('A0','sister','сестра','I have one sister.'),
+  ('A0','brother','брат','My brother is ten.'),
+  ('A0','house','дом','This is our house.'),
+  ('A0','room','комната','The room is small.'),
+  ('A0','table','стол','The book is on the table.'),
+  ('A0','chair','стул','This chair is blue.'),
+  ('A0','water','вода','I would like some water.'),
+  ('A0','food','еда','The food is good.'),
+  ('A0','apple','яблоко','This is a red apple.'),
+  ('A0','cat','кошка','The cat is in the room.'),
+  ('A0','dog','собака','My dog is big.'),
+  ('A0','red','красный','The bag is red.'),
+  ('A0','blue','синий','I have a blue pen.'),
+  ('A0','big','большой','It is a big house.'),
+  ('A0','small','маленький','This book is small.'),
+  ('A0','good','хороший','It is a good day.'),
+  ('A0','thank you','спасибо','Thank you for your help.'),
+
+  ('A1','morning','утро','I work in the morning.'),
+  ('A1','afternoon','день','We study in the afternoon.'),
+  ('A1','weekend','выходные','I rest at the weekend.'),
+  ('A1','always','всегда','She always arrives early.'),
+  ('A1','sometimes','иногда','We sometimes cook together.'),
+  ('A1','never','никогда','He never drinks coffee.'),
+  ('A1','friend','друг','My friend lives nearby.'),
+  ('A1','family','семья','My family is very friendly.'),
+  ('A1','shop','магазин','The shop opens at nine.'),
+  ('A1','price','цена','The price is on the label.'),
+  ('A1','money','деньги','I do not have much money.'),
+  ('A1','weather','погода','The weather is nice today.'),
+  ('A1','sunny','солнечный','It is sunny outside.'),
+  ('A1','rain','дождь','There is a lot of rain.'),
+  ('A1','home','дом','I am going home now.'),
+  ('A1','cook','готовить','They cook dinner every day.'),
+  ('A1','walk','гулять','We walk in the park.'),
+  ('A1','read','читать','I read before bed.'),
+  ('A1','write','писать','Please write your name.'),
+  ('A1','speak','говорить','Can you speak English?'),
+
+  ('A2','airport','аэропорт','We arrived at the airport early.'),
+  ('A2','hotel','отель','The hotel is near the station.'),
+  ('A2','reservation','бронирование','I have a reservation for two nights.'),
+  ('A2','map','карта','Let us look at the map.'),
+  ('A2','platform','платформа','The train leaves from platform six.'),
+  ('A2','delay','задержка','The flight has a short delay.'),
+  ('A2','passport','паспорт','Please show your passport.'),
+  ('A2','travel','путешествовать','I want to travel around Europe.'),
+  ('A2','trip','поездка','Our trip was very interesting.'),
+  ('A2','bus','автобус','We went there by bus.'),
+  ('A2','train','поезд','The train was crowded.'),
+  ('A2','flight','рейс','Our flight leaves tomorrow.'),
+  ('A2','comfortable','удобный','This seat is comfortable.'),
+  ('A2','crowded','переполненный','The city centre was crowded.'),
+  ('A2','expensive','дорогой','The hotel is too expensive.'),
+  ('A2','nearby','поблизости','Is there a café nearby?'),
+  ('A2','across','через; напротив','The bank is across the street.'),
+  ('A2','between','между','The hotel is between two shops.'),
+  ('A2','straight','прямо','Go straight for five minutes.'),
+  ('A2','corner','угол','Turn right at the corner.'),
+
+  ('B1','career','карьера','She wants to develop her career.'),
+  ('B1','skill','навык','Communication is an important skill.'),
+  ('B1','interview','собеседование','I have a job interview tomorrow.'),
+  ('B1','deadline','крайний срок','We must meet the deadline.'),
+  ('B1','project','проект','Our team completed the project.'),
+  ('B1','colleague','коллега','A colleague helped me solve the problem.'),
+  ('B1','manage','управлять; справляться','She manages a small team.'),
+  ('B1','develop','развивать','I want to develop my writing skills.'),
+  ('B1','challenge','сложная задача','Learning vocabulary can be a challenge.'),
+  ('B1','decision','решение','We made an important decision.'),
+  ('B1','environment','окружающая среда','We should protect the environment.'),
+  ('B1','health','здоровье','Regular exercise improves your health.'),
+  ('B1','community','сообщество','The project supports the local community.'),
+  ('B1','opinion','мнение','In my opinion, the idea is useful.'),
+  ('B1','agree','соглашаться','I agree with your main point.'),
+  ('B1','disagree','не соглашаться','I politely disagree with that conclusion.'),
+  ('B1','probably','вероятно','It will probably rain later.'),
+  ('B1','however','однако','The task was difficult; however, we finished it.'),
+  ('B1','therefore','поэтому','The road was closed; therefore, we turned back.'),
+  ('B1','goal','цель','My goal is to speak confidently.'),
+
+  ('B2','argument','аргумент','The writer presents a convincing argument.'),
+  ('B2','advantage','преимущество','Flexibility is a major advantage.'),
+  ('B2','disadvantage','недостаток','The main disadvantage is the cost.'),
+  ('B2','issue','вопрос; проблема','We need to discuss this issue.'),
+  ('B2','research','исследование','Recent research supports the claim.'),
+  ('B2','approach','подход','We need a more practical approach.'),
+  ('B2','impact','влияние','The policy had a significant impact.'),
+  ('B2','policy','политика; правило','The company introduced a new policy.'),
+  ('B2','trend','тенденция','The data shows a clear trend.'),
+  ('B2','maintain','поддерживать','It is difficult to maintain this pace.'),
+  ('B2','claim','утверждение','The article makes a controversial claim.'),
+  ('B2','despite','несмотря на','Despite the rain, the event continued.'),
+  ('B2','moreover','более того','The method is fast; moreover, it is accurate.'),
+  ('B2','nevertheless','тем не менее','The task was complex; nevertheless, we succeeded.'),
+  ('B2','accurate','точный','The report provides accurate figures.'),
+  ('B2','complex','сложный','This is a complex social problem.'),
+  ('B2','efficient','эффективный','The new system is more efficient.'),
+  ('B2','relevant','актуальный; относящийся','Please include only relevant information.'),
+  ('B2','aware','осведомлённый','Most people are aware of the risks.'),
+  ('B2','require','требовать','The role requires strong communication skills.'),
+
+  ('C1','ambiguity','двусмысленность','The wording creates unnecessary ambiguity.'),
+  ('C1','nuance','нюанс','The translation loses an important nuance.'),
+  ('C1','convey','передавать смысл','The image conveys a sense of urgency.'),
+  ('C1','compelling','убедительный','She presented a compelling case for reform.'),
+  ('C1','plausible','правдоподобный','This is a plausible explanation.'),
+  ('C1','undermine','подрывать','Weak evidence may undermine the argument.'),
+  ('C1','reinforce','усиливать','The latest findings reinforce our conclusion.'),
+  ('C1','comprehensive','всесторонний','The report offers a comprehensive overview.'),
+  ('C1','inevitable','неизбежный','Some degree of change is inevitable.'),
+  ('C1','controversial','спорный','The proposal remains highly controversial.'),
+  ('C1','advocate','выступать за','Many experts advocate gradual reform.'),
+  ('C1','acknowledge','признавать','The author acknowledges several limitations.'),
+  ('C1','elaborate','подробно объяснять','Could you elaborate on your final point?'),
+  ('C1','distinguish','различать','We must distinguish cause from correlation.'),
+  ('C1','interpret','интерпретировать','The results can be interpreted in two ways.'),
+  ('C1','derive','выводить; получать','The principle is derived from earlier research.'),
+  ('C1','notwithstanding','несмотря на','Notwithstanding these concerns, the plan is viable.'),
+  ('C1','consequently','следовательно','Demand fell; consequently, production was reduced.'),
+  ('C1','whereby','посредством чего','They created a system whereby users verify results.'),
+  ('C1','framework','структура; система','The theory provides a useful analytical framework.')
+) as item(level_code, word, translation, example)
+on conflict (level_code, word) do update set
+  translation = excluded.translation,
+  example = excluded.example,
+  source_url = excluded.source_url;
+
+-- The expanded course remains read-only from the client and explicitly
+-- available through the Data API, independently of changing platform defaults.
+grant select on public.english_levels, public.lessons, public.lesson_exercises, public.vocabulary
+to anon, authenticated;
