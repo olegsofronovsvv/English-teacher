@@ -36,6 +36,7 @@ data class LessonDto(
     @SerialName("estimated_minutes") val estimatedMinutes: Int,
     @SerialName("source_url") val sourceUrl: String,
     @SerialName("video_url") val videoUrl: String = "",
+    @SerialName("video_poster_url") val videoPosterUrl: String = "",
 )
 
 @Serializable

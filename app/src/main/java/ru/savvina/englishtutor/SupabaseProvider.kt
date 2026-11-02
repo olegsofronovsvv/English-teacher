@@ -7,8 +7,8 @@ import io.github.jan.supabase.storage.Storage
 
 object SupabaseProvider {
     val client = createSupabaseClient(
-        supabaseUrl = SUPABASE_URL,
-        supabaseKey = SUPABASE_PUBLISHABLE_KEY,
+        supabaseUrl = BuildConfig.SUPABASE_URL,
+        supabaseKey = BuildConfig.SUPABASE_PUBLISHABLE_KEY,
     ) {
         install(Auth) {
             autoLoadFromStorage = true

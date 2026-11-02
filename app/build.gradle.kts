@@ -11,8 +11,8 @@ val localProperties = Properties().apply {
     if (file.exists()) file.inputStream().use(::load)
 }
 
-fun localProperty(name: String): String =
-    localProperties.getProperty(name) ?: error("Add $name to local.properties")
+fun configValue(name: String, fallback: String): String =
+    localProperties.getProperty(name) ?: System.getenv(name) ?: fallback
 
 // OneDrive can lock generated build folders while syncing. Keep disposable
 // compiler output in LocalAppData so Clean and Run remain reliable.
@@ -30,9 +30,14 @@ android {
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
+        buildConfigField("String", "SUPABASE_URL", "\"${configValue("SUPABASE_URL", "https://eesamyzjakycnhlvmnzv.supabase.co")}\"")
+        buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${configValue("SUPABASE_PUBLISHABLE_KEY", "sb_publishable_l8_UtgixV3VCWN0xv0XWeg_nIf_ozGK")}\"")
     }
 
-    buildFeatures { compose = true }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -46,6 +51,11 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview:1.12.1")
     implementation("androidx.compose.foundation:foundation:1.12.1")
     implementation("androidx.compose.material3:material3:1.4.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.11.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.11.0")
+    implementation("androidx.media3:media3-exoplayer:1.11.1")
+    implementation("androidx.media3:media3-exoplayer-hls:1.11.1")
+    implementation("androidx.media3:media3-ui:1.11.1")
     implementation(platform("io.github.jan-tennert.supabase:bom:3.8.0"))
     implementation("io.github.jan-tennert.supabase:auth-kt")
     implementation("io.github.jan-tennert.supabase:postgrest-kt")
